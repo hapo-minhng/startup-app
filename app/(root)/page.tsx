@@ -1,3 +1,4 @@
+import Startup from "@/components/Startup";
 import Header from "../../components/Header";
 
 export default async function Home({ searchParams }: {
@@ -12,6 +13,8 @@ export default async function Home({ searchParams }: {
           Pitch your startup, <br />connect with entrepreneurs
         </>
       } subHeading="Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions" query={query} />
+
+      <Startup query={query} />
     </>
   );
 }
