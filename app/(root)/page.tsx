@@ -2,13 +2,14 @@ import Startup from "@/components/Startup";
 import Header from "../../components/Header";
 import { client } from "@/sanity/lib/client";
 import { STARTUP_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 export default async function Home({ searchParams }: {
   searchParams: Promise<{ query?: string }>
 }) {
   const query = (await searchParams).query;
 
-  const posts = await client.fetch(STARTUP_QUERY);
+  const { data: posts } = await sanityFetch({ query: STARTUP_QUERY });
 
   return (
     <>
@@ -19,6 +20,8 @@ export default async function Home({ searchParams }: {
       } subHeading="Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions" query={query} />
 
       <Startup query={query} posts={posts} />
+
+      <SanityLive />
     </>
   );
 }
