@@ -1,6 +1,5 @@
 import Startup from "@/components/Startup";
 import Header from "../../components/Header";
-import { client } from "@/sanity/lib/client";
 import { STARTUP_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
@@ -9,11 +8,13 @@ export default async function Home({ searchParams }: {
 }) {
   const query = (await searchParams).query;
 
-  const { data: posts } = await sanityFetch({ query: STARTUP_QUERY });
+  const params = { search: query || null }; 
+
+  const { data: posts } = await sanityFetch({ query: STARTUP_QUERY, params });
 
   return (
     <>
-      <Header heading={
+      <Header tag="Pitch, Vote and Grow" heading={
         <>
           Pitch your startup, <br />connect with entrepreneurs
         </>
