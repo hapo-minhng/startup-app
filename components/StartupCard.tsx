@@ -3,7 +3,6 @@ import { formatDate } from '@/lib/utils'
 import { EyeIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { describe } from 'node:test'
 import { Button } from './ui/button'
 
 const StartupCard = ({ post }: { post: StartupTypeCard }) => {
