@@ -3,7 +3,7 @@ import { Author, Startup } from '@/sanity/type'
 import Link from 'next/link';
 import Image from 'next/image';
 import markdownit from "markdown-it"
-import { Skeleton } from './ui/skeleton';
+import { Skeleton } from '../ui/skeleton';
 import View from './View';
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author }

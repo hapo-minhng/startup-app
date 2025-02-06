@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import Header from '@/components/Header';
+import Container from '@/components/startup-details/Container';
+import Header from '@/components/common/Header';
 import { formatDate } from '@/lib/utils';
 import { client } from '@/sanity/lib/client';
 import { STARTUP_BY_ID_QUERY } from '@/sanity/lib/queries';
