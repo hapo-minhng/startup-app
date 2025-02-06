@@ -8,7 +8,7 @@ interface HeaderProps {
 export default function Header({ tag, heading, subHeading, children }: HeaderProps) {
     return (
         <section className="pink_container !min-h-[230px]">
-            <h4 className="tag">{tag}</h4>
+            {tag && <p className="tag">{tag}</p>}
 
             <h1 className="heading">{heading}</h1>
 
