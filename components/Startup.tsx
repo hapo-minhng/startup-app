@@ -7,17 +7,6 @@ interface StartupProps {
 }
 
 const Startup = ({ query, posts }: StartupProps) => {
-    // const posts = [{
-    //     _createdAt: new Date(),
-    //     views: 55,
-    //     author: { _id: 1, name: "Adrian" },
-    //     _id: 1,
-    //     description: "This is a description.",
-    //     image: "https://media.vneconomy.vn/images/upload/2025/01/08/boston-dynamics-atlas.jpg",
-    //     category: "Robots",
-    //     title: "We Robots",
-    // }]
-
     return (
         <section className='section_container'>
             <p className='text-30-semibold'>

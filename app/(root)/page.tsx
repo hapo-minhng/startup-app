@@ -2,6 +2,7 @@ import Startup from "@/components/Startup";
 import Header from "../../components/Header";
 import { STARTUP_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
+import SearchForm from "@/components/SearchForm";
 
 export default async function Home({ searchParams }: {
   searchParams: Promise<{ query?: string }>
@@ -18,7 +19,9 @@ export default async function Home({ searchParams }: {
         <>
           Pitch your startup, <br />connect with entrepreneurs
         </>
-      } subHeading="Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions" query={query} />
+      } subHeading="Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions">
+        <SearchForm query={query} />
+      </Header>
 
       <Startup query={query} posts={posts} />
 
