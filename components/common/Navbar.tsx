@@ -19,8 +19,8 @@ const Navbar = async () => {
                     {session && session?.user ? (
                         <>
                             <Link href="/startup/create">
-                                <span className="sm:hidden">Create</span>
-                                <BadgePlus className="size-6" />
+                                <span className="max-sm:hidden">Create</span>
+                                <BadgePlus className="size-6 sm:hidden" />
                             </Link>
 
                             <form action={async () => {
@@ -29,12 +29,12 @@ const Navbar = async () => {
                                 await signOut({ redirectTo: "/" })
                             }}>
                                 <button type='submit'>
-                                    <span className="sm:hidden">Logout</span>
-                                    <LogOut className="size-6 text-red-500" />
+                                    <span className="text-red-500 max-sm:hidden">Logout</span>
+                                    <LogOut className="size-6 text-red-500 sm:hidden" />
                                 </button>
                             </form>
 
-                            <Link href={`/user/${session?.user?.id}`}>
+                            <Link href={`/user/${session?.id}`}>
                                 <Avatar className="size-10">
                                     <AvatarImage
                                         src={session?.user?.image || "unknown-user.png"}
