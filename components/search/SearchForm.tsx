@@ -6,7 +6,7 @@ import { Search } from 'lucide-react';
 const SearchForm = ({ query }: { query?: string }) => {
     return (
         <Form action="/" scroll={false} className='search-form'>
-            <input className='search-input' name='query' defaultValue="" placeholder='Search Startups' />
+            <input className='search-input' name='query' defaultValue={query} placeholder='Search Startups' />
 
             <div className='flex gap-2'>
                 {query && (

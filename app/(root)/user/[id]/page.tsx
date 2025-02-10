@@ -4,7 +4,7 @@ import ProfileStartupCard from '@/components/user/ProfileStartupCard';
 import { client } from '@/sanity/lib/client';
 import { AUTHOR_BY_ID_QUERY } from '@/sanity/lib/queries';
 import { notFound } from 'next/navigation';
-import React, { Suspense } from 'react'
+import React from 'react'
 
 export const experimental_ppr = true;
 

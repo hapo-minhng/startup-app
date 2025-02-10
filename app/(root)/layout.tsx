@@ -3,9 +3,11 @@ import Navbar from "../../components/common/Navbar";
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <main className="font-work-sans">
-            <Navbar />
+            <div>
+                <Navbar />
 
-            {children}
+                {children}
+            </div>
         </main>
     )
 }
