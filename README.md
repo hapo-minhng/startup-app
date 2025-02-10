@@ -25,7 +25,7 @@ NEXT_PUBLIC_SANITY_API_VERSION="vX"
 
 SANITY_WRITE_TOKEN=
 ```
-Replace the placeholder values with actual Sanity credentials. You can obtain these credentials by signing up & creating a new project on the Sanity website.
+Replace the placeholder values with actual Sanity credentials. You can obtain these credentials by signing up & creating a new project on the [Sanity website](https://www.sanity.io/).
 
 # Run the project
 
