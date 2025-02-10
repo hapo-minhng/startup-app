@@ -7,6 +7,7 @@ import View from './View';
 import SimilarStartup from './SimilarStartup';
 import { client } from '@/sanity/lib/client';
 import { STARTUPS_BY_CATEGORY_QUERY } from '@/sanity/lib/queries';
+import { Skeleton } from '../ui/skeleton';
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author }
 
@@ -48,7 +49,9 @@ const Container = async ({ post }: { post: StartupTypeCard }) => {
             <div className='space-y-5 mt-10 max-w-4xl mx-auto'>
                 <SimilarStartup category={category} id={_id} />
 
-                <View id={_id} />
+                <Suspense fallback={<Skeleton className="view_skeleton" />}>
+                    <View id={_id} />
+                </Suspense>
             </div>
         </section>
     )
