@@ -3,7 +3,6 @@ import { Author, Startup } from '@/sanity/type'
 import Link from 'next/link';
 import Image from 'next/image';
 import markdownit from "markdown-it"
-import { Skeleton } from '../ui/skeleton';
 import View from './View';
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author }
@@ -46,9 +45,7 @@ const Container = ({ post }: { post: StartupTypeCard }) => {
             <div className='space-y-5 mt-10 max-w-4xl mx-auto'>
                 <h5 className='text-30-bold'>Similar startups</h5>
 
-                <Suspense fallback={<Skeleton className='view_skeleton' />}>
-                    <View id={_id} />
-                </Suspense>
+                <View id={_id} />
             </div>
         </section>
     )
