@@ -13,7 +13,7 @@ const SearchForm = ({ query }: { query?: string }) => {
                     <SearchFormReset />
                 )}
 
-                <button type='submit' className='search-btn text-white'>
+                <button className='search-btn text-white' type='submit'>
                     <Search className='size-5' />
                 </button>
             </div>

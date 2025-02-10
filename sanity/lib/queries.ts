@@ -31,6 +31,21 @@ export const STARTUP_BY_ID_QUERY = defineQuery(`*[_type == "startup" && _id == $
 }
 `);
 
+export const STARTUPS_BY_CATEGORY_QUERY = defineQuery(`*[_type == "startup" && category == $category && _id != $id][0..3] {
+  _id,
+  title,
+  slug,
+  _createdAt,
+  author -> {
+    _id, name, username, image, bio
+  },
+  views,
+  description,
+  category,
+  image,
+}
+`);
+
 export const STARTUP_VIEWS_QUERY = defineQuery(`*[_type == "startup" && _id == $id][0] {
   _id,
   views,

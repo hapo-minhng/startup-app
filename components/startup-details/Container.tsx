@@ -4,11 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import markdownit from "markdown-it"
 import View from './View';
+import SimilarStartup from './SimilarStartup';
+import { client } from '@/sanity/lib/client';
+import { STARTUPS_BY_CATEGORY_QUERY } from '@/sanity/lib/queries';
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author }
 
-const Container = ({ post }: { post: StartupTypeCard }) => {
-    const { _createdAt, views, author, title, category, _id, image, description } = post;
+const Container = async ({ post }: { post: StartupTypeCard }) => {
+    const { author, _id, image, category } = post;
 
     const md = markdownit();
 
@@ -43,7 +46,7 @@ const Container = ({ post }: { post: StartupTypeCard }) => {
             <hr className='divider' />
 
             <div className='space-y-5 mt-10 max-w-4xl mx-auto'>
-                <h5 className='text-30-bold'>Similar startups</h5>
+                <SimilarStartup category={category} id={_id} />
 
                 <View id={_id} />
             </div>
